@@ -1,0 +1,215 @@
+a:hover, a.active, a:focus{
+	text-decoration: none;
+}
+.backend{
+	background-color: #ecf0f5 !important;
+}
+.d_lock_screen{
+	background:#02bac6 url("../images/admin_bg.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+}
+.btn-logout{
+	display: inline-block;
+	background: #99e7ff;
+	padding: 6px 15px;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+.my-btn-primary{
+	display: inline-block;
+	background-color: #337ab7;
+	padding: 6px 15px;
+	margin: 10px 2px;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.my-btn-success{
+	display: inline-block;
+	background-color: #5cb85c;
+	padding: 6px 15px;
+	margin: 10px 2px;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+.my-btn-warning{
+	display: inline-block;
+	background-color: #eb9316;
+	padding: 6px 15px;
+	margin: 10px 2px;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+.my-btn-danger{
+	display: inline-block;
+	background-color: #c12e2a;
+	padding: 6px 15px;
+	margin: 10px 2px;
+	font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+.my_-table>thead>tr>th {
+	padding: 10px 5px;
+}
+.my_-table>tbody>tr>td {
+	padding: 10px 5px;
+}
+/*.table>thead>tr>th {
+	border-bottom: 1px solid #e5e5e5;
+}*/
+input[type=checkbox] {
+    border: 1px solid #3dbfef;
+    background: #fff;
+    color: #555;
+    clear: none;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 0;
+    height: 14px;
+    outline: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 14px;
+    min-width: 14px;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    -webkit-transition: .05s border-color ease-in-out;
+    transition: .05s border-color ease-in-out;
+}
+
+.postbox{
+	min-width: 255px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    background: #fff;
+    margin-bottom: 10px;
+}
+.postbox h2{
+	font-size: 14px;
+    padding: 5px 12px;
+    margin: 0;
+    line-height: 1.4;
+    border-bottom: 1px solid #e5e5e5;
+}
+.category_list{
+	padding: 0px 10px;
+}
+.category_list li{
+	display: list-item;
+	list-style: none;
+	color: #337ab7;
+}
+
+
+.input-tag{
+	border: 1px solid #ccc;
+	padding: 4px 10px;
+}
+.input-tag:focus{
+	border-color: #66afe9;
+  	outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+}
+
+.btn-add-tag{
+	color: #555;
+	background: #f7f7f7;
+	font-size: 13px;
+	line-height: 26px;
+	height: 28px;
+	padding: 6px 10px;
+	border: 1px solid #ccc;
+}
+.tagList{
+	margin: 10px;
+	font-size: 12px;
+}
+.tagList > span {
+	font-size: 16px;
+	color: #0073aa;
+}
+.tagList > span > label{
+	margin-left: 5px;
+	font-size: 13px;
+	font-style: normal;
+	color: #6d6d6d;
+}
+.d_icon {
+    background: #fff;
+    margin-bottom: 10px;
+}
+.icon_category {
+    background-image: url(../images/icons/category.png);
+}
+.icon_article {
+    background-image: url(../images/icons/article.png);
+}
+.icon_item_category {
+    background-image: url(../images/icons/itemCategory.png);
+}
+.icon_item {
+    background-image: url(../images/icons/item.png);
+}
+.icon_group {
+    background-image: url(../images/icons/group.png);
+}
+.icon_user {
+    background-image: url(../images/icons/user.png);
+}
+.icon_statistic{
+	background-image: url(../images/icons/statistic.png);
+}
+.icon_40 {
+    width: 40px;
+    height: 40px;
+    background-size: 100%;
+}
+.icon_48 {
+    width: 48px;
+    height: 48px;
+    background-size: 100%;
+}
+.d_icon .d_number {
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+.d_icon .d_text {
+    font-size: 15px;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+}
