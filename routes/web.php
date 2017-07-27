@@ -29,7 +29,9 @@ Route::group(['namespace' => 'Backend'], function() {
 	Route::post('/quantri/posts/checktag', 'PostsController@checktag');
 	Route::post('/quantri/posts/addtag', 'TagsController@addtag');
 });
-
+Route::group(['namespace' => 'RaoVat'], function() {
+	Route::get('/raovat','RaoVatController@index');
+});
 Route::get('/', 'FrontendController@index');
 Route::get('/{alias}', 'FrontendController@showpostincategory');
 Route::get('/{c_alias}/{p_alias}', 'FrontendController@showpost');
