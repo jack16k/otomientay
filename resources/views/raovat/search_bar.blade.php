@@ -1,5 +1,6 @@
 
 <div class="row">
+    <div>{{var_dump($carTypes)}}</div>
     <div class="search-basic">
         <select class="col-sm-3 col-xs-5 spec" name="manufacturer" onchange="select_change_submit()">
             <option value="">Hãng xe</option>
@@ -9,8 +10,8 @@
         </select>
         <select class="col-sm-3 col-xs-5 spec" name="manufacturer" onchange="select_change_submit()">
             <option value="">Dòng xe</option>
-            @foreach($manufacturers as $manu)
-            <option value="{{$manu->hx_alias}}">{{$manu->hx_name}}</option>    
+            @foreach($carTypes as $type)
+            <option value="{{$type->lx_alias}}">{{$type->lx_name}}</option>    
             @endforeach
         </select>
         <select class="col-sm-3 col-xs-5 spec" name="location_city_id" onchange="select_change_submit()">

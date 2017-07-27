@@ -5,6 +5,7 @@ use App\Categories;
 use App\Posts;
 use App\City;
 use App\Manufacturer;
+use App\CarType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -17,7 +18,8 @@ class RaoVatController extends Controller{
 		// $posts = $this->getPostByCategory();
         $cities = $this->getCityList();
 		$manufacturer = $this->getManufacturerList();
-        return view('raovat/main',array('categories'=>$categories, 'cities'=>$cities,'manufacturers'=>$manufacturer,'index'=>0));
+		$carTypes = $this->getCarTypeList();
+        return view('raovat/main',array('categories'=>$categories, 'cities'=>$cities,'manufacturers'=>$manufacturer,'carTypes'=>$carTypes,'index'=>0));
     }
     public function getListCategories($state, $parent){
 		$arr_out = "";
@@ -73,8 +75,13 @@ class RaoVatController extends Controller{
 	{	
 		return Manufacturer::Active()->get();
 	}
-	public function getResult($strQuery,$city)
+	public function getCarTypeList()
 	{
-		# code...
+		return DB::table('loaixe')->join('hangxe','loaixe.hx_id','=','hangxe.hx_id')->where('hangxe.hx_state',1)
+		->where('loaixe.lx_state',1)->select('loaixe.*','hangxe.hx_alias')->get();
+	}
+	public function getResult($type,$manufacturer,$city)
+	{
+		
 	}
 }
