@@ -1,6 +1,5 @@
 
 <div class="row">
-    <div>{{var_dump($carTypes)}}</div>
     <div class="search-basic">
         <select class="col-sm-3 col-xs-5 spec" name="manufacturer" onchange="select_change_submit()">
             <option value="">Hãng xe</option>

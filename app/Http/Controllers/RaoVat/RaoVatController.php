@@ -6,6 +6,7 @@ use App\Posts;
 use App\City;
 use App\Manufacturer;
 use App\CarType;
+use App\RaoVatPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -19,7 +20,8 @@ class RaoVatController extends Controller{
         $cities = $this->getCityList();
 		$manufacturer = $this->getManufacturerList();
 		$carTypes = $this->getCarTypeList();
-        return view('raovat/main',array('categories'=>$categories, 'cities'=>$cities,'manufacturers'=>$manufacturer,'carTypes'=>$carTypes,'index'=>0));
+		$posts = $this->getResult("","","");
+        return view('raovat/main',array('categories'=>$categories, 'cities'=>$cities,'manufacturers'=>$manufacturer,'carTypes'=>$carTypes,'posts'=>$posts,'index'=>0));
     }
     public function getListCategories($state, $parent){
 		$arr_out = "";
@@ -82,6 +84,6 @@ class RaoVatController extends Controller{
 	}
 	public function getResult($type,$manufacturer,$city)
 	{
-		
+		return RaoVatPost::paginate(12);
 	}
 }
