@@ -13,4 +13,15 @@
             
         </div>
     @endforeach
+     
+</div>
+<div class="row">
+<div class="text-center col-sm-4 col-sm-push-4">
+<ul class="pagination">
+        <li href="#" class="active">
+            <a>1</a>
+        </li>
+    </ul>
+</div>
+    
 </div>

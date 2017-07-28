@@ -31,6 +31,8 @@ Route::group(['namespace' => 'Backend'], function() {
 });
 Route::group(['namespace' => 'RaoVat'], function() {
 	Route::get('/raovat','RaoVatController@index');
+	Route::get('/raovat/item/{id}','RaoVatController@getItem');
+	Route::get('/raovat/search/{city}/{manufacturer}/{type}','RaoVatController@filter');
 });
 Route::get('/', 'FrontendController@index');
 Route::get('/{alias}', 'FrontendController@showpostincategory');
