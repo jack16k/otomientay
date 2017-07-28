@@ -62,7 +62,7 @@
         
     </div>
     <div class="col-sm-2 text-center" style="height:100%"> 
-        <button class="btn-search" type="submit" style="height:100%">Tìm</button>
+        <button class="btn-search" type="submit" style="height:50px;width:100px">Tìm</button>
     </div>
     </form>
 </div>

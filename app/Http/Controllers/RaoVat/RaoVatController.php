@@ -30,7 +30,8 @@ class RaoVatController extends Controller{
 	public function getItem($alias)
 	{
 		$categories = $this->getListCategories(1, 0);
-		return view('raovat/item',array('categories'=>$categories));
+		$post = RaoVatPost::Active()->where('items_alias',$alias)->get()->first();
+		return view('raovat/item',array('categories'=>$categories,'post'=>$post));
 	}
     public function getListCategories($state, $parent){
 		$arr_out = "";
