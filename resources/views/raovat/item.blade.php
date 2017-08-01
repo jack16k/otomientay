@@ -3,7 +3,7 @@
     {{$post->items_title}}
 @endsection
 @section('content')
-<div class="content">
+<div class="content" style="margin-top:90px">
     <div class="container">
         <div class="row">
             <div class="panel panel-default">
