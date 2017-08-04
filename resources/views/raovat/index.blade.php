@@ -18,7 +18,8 @@
 
         
         <link rel="stylesheet" href="<?php echo asset('css/styles.css')?>" type="text/css">
-        <link rel="stylesheet" href="<?php echo asset('css/frontend.css')?>" type="text/css">
+        <!--<link rel="stylesheet" href="<?php echo asset('css/frontend.css')?>" type="text/css">-->
+        <link rel="stylesheet" href="<?php echo asset('css/raovat.css')?>" type="text/css">
         <link rel="stylesheet" href="<?php echo asset('css/font-awesome-4.7.0/css/font-awesome.min.css')?>" type="text/css">
         <link rel="stylesheet" href="<?php echo asset('css/animate.css')?>" type="text/css">
         <link rel="stylesheet" href="<?php echo asset('bootstrap-touch-slider/bootstrap-touch-slider.css')?>" type="text/css">
@@ -43,38 +44,29 @@
         </script>
     </head>
     <body>
-        <header class="clearfix affix-top" data-spy="affix" data-offset-top="1" style="transform: translateZ(0px);">
-            <div class="bottom-header"> 
-                <div class="container">
-                    <nav class="navbar navbar-default" role="navigation">
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a class="navbar-brand" href="<?php echo url('/');?>">
-                                    <span class="logo">
-                                        <span class="primary_text">Ôtô Cần Thơ</span>
-                                    </span>
-                                </a>
-                            </div>
-
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            
-                            <ul class="nav navbar-nav pull-right">
-                                <li class="active"><a href="<?php echo url('/');?>">Trang chủ</a></li>
-                                 @php echo $categories; @endphp 
-                                <li><a href="#">Học bằng lái xe</a></li>
-                                <li><a href="http://app.canthotv.vn/oto/forums">Diễn đàn</a></li>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                      </div><!-- /.container-fluid -->
-                    </nav>
-                </div>
+        <header class="clearfix" >
+            <div class="container-fluid">
+                <nav class="navbar navbar-default" role="navigation">
+                    <div class="">
+                        <a href="<?php echo url('/');?>">
+                            <span class="logo">
+                                <span class="primary_text">Ôtô Cần Thơ</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="<?php echo url('/raovat');?>">
+                            <span class="logo">
+                                <span class="primary_text">Rao Vat</span>
+                            </span>
+                        </a>
+                        
+                        
+                    </div>   
+                    <div>
+                        <span><a href="http://app.canthotv.vn/oto/forums">Diễn đàn</a></span>
+                    </div>
+                </nav>
             </div>
         </header>
         <div class="clearfix"></div>

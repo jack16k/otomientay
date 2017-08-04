@@ -1,0 +1,13 @@
+header container-fluid{
+    padding: 0;
+    box-shadow: 5 5;
+}
+header a{
+    cursor: pointer
+}
+
+/* header .navbar-default {
+	background: rgba(0, 0, 0, 0.29);
+	box-shadow: none;
+	border-radius: none;
+} */
