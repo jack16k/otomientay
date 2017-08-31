@@ -1,13 +1,197 @@
-header container-fluid{
-    padding: 0;
+header .container-fluid{
     box-shadow: 5 5;
 }
 header a{
     cursor: pointer
 }
-
+a:hover, a:focus{
+	text-decoration: none;
+}
+header .logo .primary_text {
+    font-family: 'Yellowtail', cursive;
+    color: #F38630;
+    font-size: 30px;
+    display: block;
+    text-align: center;
+    padding-right: 5px;
+    transition-duration: 0s;
+}
+header .sign-in{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+header .news{
+    color: #FFF;
+    background-color: #0095ff;
+    border-color: #07c;
+    box-shadow: inset 0 1px 0 #66bfff;
+    padding: 5px
+}
+header .sipanel{
+    display: inline-block;
+    height: 100%;
+    padding: 5px;
+    text-align: right;
+}
 /* header .navbar-default {
 	background: rgba(0, 0, 0, 0.29);
 	box-shadow: none;
 	border-radius: none;
 } */
+
+ /* Bordered form */
+#login-form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+#login-form input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+#login-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+#login-form button:hover {
+    opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+#login-form .cancelbtn {
+    background-color: #f44336;
+}
+
+/* The "Forgot password" text */
+#login-form span.psw {
+    float: right;
+    padding-top: 5px;
+}
+#login-form .header-box{
+    background-color:#f1f1f1;
+    padding: 5px 10px
+}
+#login-form .header-box p{
+    font-size: 20pt
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+} 
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5px auto; /* 15% from the top and centered */
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+.form-post .nav-header{
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 5px;
+    
+}
+.form-post .nav-header li{
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    text-align: center;
+}
+.form-post .nav-header li,a{
+    background-color: rgb(242, 242, 242);
+}
+.form-post .nav-header li:after{
+    content: "";
+    border-left: 20px solid rgb(242, 242, 242);
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    z-index: 21;
+    top: 0;
+    left: 100%;
+}
+.form-post .nav-header li:not(:first-child) :before{
+    content: "";
+    border-left: 20px solid #FFF;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+}
+.form-post #img-upload {
+    min-height: 150px;
+    display: block;
+}
+.error-message{
+    font-size: 9pt;
+    color: red;
+    font-style: italic;
+}

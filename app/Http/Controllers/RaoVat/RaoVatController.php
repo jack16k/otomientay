@@ -6,6 +6,7 @@ use App\City;
 use App\Manufacturer;
 use App\CarType;
 use App\RaoVatPost;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Pagination\LengthAwarePaginator;
@@ -20,38 +21,58 @@ class RaoVatController extends Controller{
 		$filterCity = $request->input('location_city_id',0);
 		$filterMin = $request->input('minvalue',0);
 		$filterMax = $request->input('maxvalue',0);
-        $categories = $this->getListCategories(1, 0);
+        // $categories = $this->getListCategories(1, 0);
         $cities = $this->getCityList();
 		$manufacturer = $this->getManufacturerList();
 		$carTypes = $this->getCarTypeList();
+		// get user
+		$isLogin = (session('RVfullname') != null) ;
 		$posts = $this->getResult($filterType,$filterManu,$filterCity,$filterMin,$filterMax);
-        return view('raovat/main',array('categories'=>$categories, 'cities'=>$cities,'manufacturers'=>$manufacturer,'carTypes'=>$carTypes,'posts'=>$posts,'index'=>0));
+        return view('raovat/main',array('cities'=>$cities,'manufacturers'=>$manufacturer,'carTypes'=>$carTypes,'posts'=>$posts,'index'=>0,'isLogin'=>$isLogin));
     }
+	public function login(Request $request)
+	{
+		$username = $request->input('hdUserName');
+		$password = $request->input('hdPass');
+		$u = User::where('u_username',$username)->first();
+    	if($u!= null & $u != ""){
+    		if($password ==  decrypt($u->u_pass)){
+                session(['RVuser' => encrypt($u->u_username)]);
+				session(['RVfullname' => $u->u_fullname]);
+                return "OK";
+            }
+            return "vui lòng kiểm tra lại tài khoản và mật khẩu!!!";
+    	}else{
+    		var_dump(encrypt("admin"));
+    		// return encrypt("admin");
+    		return "vui lòng kiểm tra lại tài khoản và mật khẩu!!!";
+    	}
+	}
 	public function getItem($alias)
 	{
 		$categories = $this->getListCategories(1, 0);
 		$post = RaoVatPost::Active()->where('items_alias',$alias)->get()->first();
 		return view('raovat/item',array('categories'=>$categories,'post'=>$post));
 	}
-    public function getListCategories($state, $parent){
-		$arr_out = "";
-    	$lists = Categories::where('c_state', $state)->where('c_parent_id',$parent)->get();
-    	if(count($lists) > 1){
-    		foreach($lists as $list){
-    			$childLists = Categories::where('c_state', $state)->where('c_parent_id',$list->c_id)->get();
-    			if($childLists!=null && $childLists!="" && count($childLists)>0){
-    				$arr_out = $arr_out. "<li class='dropdown'><a href='".url('/').'/'.$list->c_alias."' class='dropdown-toggle' aria-haspopup='true'>".$list->c_name."</a>";
-    				$arr_out = $arr_out."<ul class='dropdown-menu'>";
-    				$arr_out = $arr_out. $this->getListCategories($state, $list->c_id);
-    				$arr_out = $arr_out."</ul></li>";
+    // public function getListCategories($state, $parent){
+	// 	$arr_out = "";
+    // 	$lists = Categories::where('c_state', $state)->where('c_parent_id',$parent)->get();
+    // 	if(count($lists) > 1){
+    // 		foreach($lists as $list){
+    // 			$childLists = Categories::where('c_state', $state)->where('c_parent_id',$list->c_id)->get();
+    // 			if($childLists!=null && $childLists!="" && count($childLists)>0){
+    // 				$arr_out = $arr_out. "<li class='dropdown'><a href='".url('/').'/'.$list->c_alias."' class='dropdown-toggle' aria-haspopup='true'>".$list->c_name."</a>";
+    // 				$arr_out = $arr_out."<ul class='dropdown-menu'>";
+    // 				$arr_out = $arr_out. $this->getListCategories($state, $list->c_id);
+    // 				$arr_out = $arr_out."</ul></li>";
     				
-    			}else{
-    				$arr_out = $arr_out."<li><a href='".url('/').'/'.$list->c_alias."'>".$list->c_name."</a></li>";
-    			}
-    		}
-    	}
-        return $arr_out;
-    }
+    // 			}else{
+    // 				$arr_out = $arr_out."<li><a href='".url('/').'/'.$list->c_alias."'>".$list->c_name."</a></li>";
+    // 			}
+    // 		}
+    // 	}
+    //     return $arr_out;
+    // }
     public function getCityList()
     {
         return City::all();

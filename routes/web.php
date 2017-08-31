@@ -29,10 +29,16 @@ Route::group(['namespace' => 'Backend'], function() {
 	Route::post('/quantri/posts/checktag', 'PostsController@checktag');
 	Route::post('/quantri/posts/addtag', 'TagsController@addtag');
 });
-Route::group(['namespace' => 'RaoVat'], function() {
-	Route::get('/raovat','RaoVatController@index');
-	Route::get('/raovat/item/{id}','RaoVatController@getItem');
-	Route::get('/raovat/search/{city}/{manufacturer}/{type}','RaoVatController@filter');
+Route::group(['namespace' => 'RaoVat','prefix'=>'raovat'], function() {
+	Route::get('/','RaoVatController@index');
+	Route::get('/item/{id}','RaoVatController@getItem');
+	Route::get('/search/{city}/{manufacturer}/{type}','RaoVatController@filter');
+	Route::post('/login','RaoVatController@login');
+	Route::get('/dang-tin','RaoVatAdController@index');
+	Route::post('/dang-tin','RaoVatAdController@postAd');
+	Route::post('/file','FileUploadController@upload');
+	Route::delete('/file/{filename}','FileUploadController@delete');
+	Route::get('/image/{name}','RaoVatImageController@getImage');
 });
 Route::get('/', 'FrontendController@index');
 Route::get('/{alias}', 'FrontendController@showpostincategory');
